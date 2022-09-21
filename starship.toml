@@ -1,0 +1,40 @@
+add_newline = true
+
+[swift]
+disabled = true
+
+[ruby]
+disabled = true
+
+[dart]
+format = "[Dart ($version )]($style)"
+
+[package]
+disabled = true
+
+[gcloud]
+format = 'on [$symbol$project(\($region\))]($style)'
+disabled = true
+
+[git_status]
+conflicted = "⚔️"
+ahead = "💨"
+behind = "🔁"
+diverged = "😵"
+untracked = "❓"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
+
+[custom.firebase]
+command = 'echo $(grep \"$(pwd)\" ~/.config/configstore/firebase-tools.json | cut -d " " -f2)  | sed -e s/\"//g | sed -e s/\,//g'
+format = " 🔥[$output]($style)"
+when = """ test 0 = 0 """
+
+[custom.arch]
+command = "uname -m"
+when = """ test $(uname -m) = "x86_64" """
+style = "bold yellow"
+format = "[$output]($style)"
